@@ -1,0 +1,96 @@
+/* ---------- cover ---------- */
+.cover{page:cover;position:relative;width:210mm;height:297mm;overflow:hidden;color:#F6F5F1;
+  background-color:var(--navy);
+  background-image:
+    repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 3px,transparent 3px 22px,rgba(255,255,255,.02) 22px 24px,transparent 24px 46px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.03) 0 3px,transparent 3px 26px,rgba(0,0,0,.05) 26px 30px,transparent 30px 52px);
+  break-after:page}
+.orn{position:absolute;left:44pt;right:44pt;height:16pt;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='66' height='16' viewBox='0 0 66 16'%3E%3Cg id='s'%3E%3Cpath d='M8 1 L9.6 6.4 L15 8 L9.6 9.6 L8 15 L6.4 9.6 L1 8 L6.4 6.4Z' fill='%23D29A2E'/%3E%3Ccircle cx='8' cy='8' r='1.4' fill='%23262B5F'/%3E%3C/g%3E%3Cuse href='%23s' x='22' style='fill:red'/%3E%3Cg transform='translate(22 0)'%3E%3Cpath d='M8 1 L9.6 6.4 L15 8 L9.6 9.6 L8 15 L6.4 9.6 L1 8 L6.4 6.4Z' fill='%23C0453A'/%3E%3Ccircle cx='8' cy='8' r='1.4' fill='%23262B5F'/%3E%3C/g%3E%3Cg transform='translate(44 0)'%3E%3Cpath d='M8 1 L9.6 6.4 L15 8 L9.6 9.6 L8 15 L6.4 9.6 L1 8 L6.4 6.4Z' fill='%23F6F5F1'/%3E%3Ccircle cx='8' cy='8' r='1.4' fill='%23262B5F'/%3E%3C/g%3E%3C/svg%3E") left center/33pt 8pt repeat-x}
+.orn.top{top:30pt}.orn.bottom{bottom:30pt}
+.orn::after{content:"";position:absolute;left:0;right:0;border-top:.7pt dashed rgba(246,245,241,.35)}
+.orn.top::after{top:24pt}.orn.bottom::after{top:-10pt}
+.cover-art{position:absolute;left:62pt;top:98pt;width:360pt}
+.cover-art img{width:100%;transform:rotate(-4deg);display:block}
+.cover-arrow{position:absolute;left:350pt;top:74pt;width:62pt}
+.cover-note{position:absolute;left:372pt;top:118pt;font-family:var(--hand);font-size:17pt;line-height:1.05;color:var(--gold);transform:rotate(-8deg);white-space:nowrap}
+.cover-title{position:absolute;left:62pt;top:380pt;margin:0;font-family:var(--serif);font-weight:300;font-size:62pt;line-height:.98;color:#F6F5F1;letter-spacing:-.5pt;font-variation-settings:'opsz' 144,'SOFT' 30}
+.cover-tag{position:absolute;left:62pt;top:535pt;margin:0;font-family:var(--serif);font-style:italic;font-weight:450;font-size:17pt;color:var(--gold)}
+.cover-sub{position:absolute;left:62pt;top:570pt;width:360pt;margin:0;font-family:var(--serif);font-style:italic;font-weight:350;font-size:11.5pt;line-height:1.45;color:#E7D6AF}
+.cover-meta{position:absolute;left:62pt;top:700pt;margin:0;font-size:8.6pt;line-height:1.7;color:rgba(246,245,241,.85)}
+
+/* ---------- contents ---------- */
+.toc-page{padding-top:40pt}
+.toc-title{font-size:33pt;padding-bottom:12pt;margin-bottom:18pt;
+  background:linear-gradient(90deg,var(--navy) 55%,transparent 0) bottom left/9pt 1.6pt repeat-x}
+.toc{list-style:none;padding:0;margin:0}
+.toc li{display:flex;align-items:baseline;padding:10pt 0 9pt;border-bottom:.8pt dashed var(--sand)}
+.toc .n{width:44pt;font-family:var(--serif);font-weight:700;font-size:13pt;color:var(--red)}
+.toc .t{flex:1;font-family:var(--serif);font-weight:420;font-size:12pt;color:var(--navy)}
+.toc .pg{font-family:var(--serif);font-style:italic;font-size:11pt;color:var(--navy)}
+.toc-note{margin-top:28pt}
+
+/* ---------- exec: two tracks ---------- */
+.tracks{display:flex;flex-wrap:wrap;margin-top:6pt}
+.tr-labels{width:62pt;position:relative;height:116pt;font-family:var(--serif);font-weight:600;font-size:9pt;line-height:1.15}
+.tr-labels .c{position:absolute;top:18pt;color:var(--red)}
+.tr-labels .p{position:absolute;top:84pt;color:var(--navy)}
+.tr-plot{position:relative;flex:1;height:116pt;margin:0 12pt 0 4pt}
+.tr-plot .tr-img{position:absolute;left:0;right:0;top:24pt;height:64pt}
+.tr-plot .tr-img img{width:100%;height:100%;display:block}
+.tr-plot .grid{position:absolute;top:0;bottom:12pt;border-left:.8pt dashed var(--sand);transform:translateX(-.4pt)}
+.tr-plot .node{position:absolute;width:9pt;height:9pt;border-radius:50%;background:#fff;border:1.8pt solid;transform:translate(-50%,-50%);z-index:2}
+.tr-plot .node.red{border-color:var(--red)} .tr-plot .node.navy{border-color:var(--navy)}
+.tr-plot .node.gold{width:14pt;height:14pt;background:var(--gold);border:none}
+.tr-plot .lbl{position:absolute;font-size:7.4pt;color:var(--ink);white-space:nowrap;background:#fff;padding:0 2pt;z-index:1}
+.tr-plot .lbl.up{top:12pt}.tr-plot .lbl.dn{top:92pt}.tr-plot .lbl.mid{top:70pt}.tr-plot .lbl.nat{top:47pt;background:transparent}
+.tr-plot .hand-bundle{position:absolute;right:-8pt;top:66pt;font-family:var(--hand);font-size:11pt;line-height:1;color:var(--navy);text-align:center;transform:rotate(-6deg)}
+.tr-plot .mo{position:absolute;bottom:-4pt;font-size:7pt;color:var(--muted);transform:translateX(-50%);white-space:nowrap;background:#fff;padding:0 2pt}
+.tr-plot .mo.end{transform:translateX(-85%)}
+.tracks .cap{width:100%}
+
+/* ---------- five layers ---------- */
+.layers{display:flex;flex-wrap:wrap;align-items:stretch}
+.ly-rows{flex:1}
+.ly{display:flex;align-items:center;margin-bottom:5pt}
+.ly .k{width:56pt;text-align:right;padding-right:9pt;font-family:var(--serif);font-weight:650;font-size:10pt}
+.ly .band{flex:1;height:31pt;background-size:100% 100%;display:flex;align-items:center;gap:6pt;padding:0 12pt}
+.ly .band i{font-style:normal;font-size:7.6pt;padding:2pt 9pt;border:.9pt solid #3a3a44;border-radius:9pt;background:rgba(255,255,255,.75)}
+.ly-brace{width:78pt;display:flex;align-items:center;gap:4pt;padding-left:6pt}
+.ly-brace svg{width:10pt;height:165pt}
+.ly-brace .note{font-size:12pt;transform:none;margin:0}
+.layers .cap{width:100%}
+
+/* ---------- journey ---------- */
+.journey .jw{position:relative;height:150pt;margin:0 26pt}
+.journey .jw img{position:absolute;left:0;right:0;top:40pt;width:100%;height:64pt}
+.journey .st{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4pt;font-family:var(--serif);font-weight:650;font-size:9pt}
+.journey .st.t{top:8pt}.journey .st.b{top:94pt}
+.journey .st em{font-style:normal}
+.journey .st b{color:inherit;width:21pt;height:21pt;border-radius:50%;border:1.8pt solid;background:#fff;display:flex;align-items:center;justify-content:center;font-size:9.5pt}
+.journey .st.navy{color:var(--navy)}.journey .st.red{color:var(--red)}.journey .st.gold{color:var(--gold)}
+.journey .jn{position:absolute;left:58%;top:116pt;font-size:12pt;transform:rotate(-4deg)}
+.journey .jd{display:grid;grid-template-columns:repeat(7,1fr);gap:5pt;margin-top:8pt;text-align:center;font-size:6.9pt;line-height:1.35;color:var(--ink)}
+.journey .jd span{border-top:.8pt dashed var(--sand);padding-top:4pt}
+
+/* ---------- orbit ---------- */
+.orbit{position:relative;display:flex;flex-wrap:wrap;justify-content:center}
+.orbit .ring{position:relative;width:200pt;height:200pt;margin:16pt 0 6pt}
+.orbit .ring img{width:100%;height:100%}
+.orbit .core{position:absolute;left:50%;top:50%;width:64pt;height:64pt;margin:-32pt 0 0 -32pt;border-radius:50%;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--serif);font-weight:650;font-size:9.5pt;line-height:1.15}
+.orbit .champ{position:absolute;left:50%;top:67%;transform:translateX(-50%) rotate(-3deg);font-size:11pt;margin:0}
+.orbit .dm{position:absolute;width:12pt;height:12pt;border-radius:50%;background:var(--navy);transform:translate(-50%,-50%)}
+.orbit .cm{position:absolute;width:10pt;height:10pt;border-radius:50%;background:#fff;border:1.2pt solid var(--sand);transform:translate(-50%,-50%)}
+.orbit .dl{position:absolute;font-family:var(--serif);font-weight:650;font-size:9pt;color:var(--navy);white-space:nowrap;transform:translate(-50%,-50%)}
+.orbit .cl{position:absolute;font-style:italic;font-size:8pt;color:var(--muted);white-space:nowrap;transform:translate(0,-50%)}
+.orbit .dl.r,.orbit .cl.r{transform:translate(-100%,-50%)} .orbit .dl.l{transform:translate(0,-50%)}
+.orbit .o-decide{position:absolute;left:12pt;top:30pt;margin:0}
+.orbit .o-cons{position:absolute;right:12pt;top:180pt;margin:0}
+.orbit small{font-size:10pt}
+.orbit .cap{width:100%}
+
+/* ---------- closing ---------- */
+.closing{margin-top:14pt;break-inside:avoid}
+.closing h2{margin-top:0}
+.answers td{padding-top:3.6pt;padding-bottom:3.6pt}
+.closing .quote.big{font-size:13.6pt;padding:16pt 26pt;margin:10pt 0 12pt}

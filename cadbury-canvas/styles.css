@@ -1,0 +1,96 @@
+/* Cadbury Canvas: v1 design system (navy, red, gold on cream-white; Fraunces, Figtree, Caveat)
+   laid out on the v4 full-width grid. */
+
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 700;src:url(fonts/fraunces-normal-300-700-latin.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 700;src:url(fonts/fraunces-normal-300-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+20A0-20C0}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 700;src:url(fonts/fraunces-italic-300-700-latin.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 700;src:url(fonts/fraunces-italic-300-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+20A0-20C0}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;src:url(fonts/figtree-normal-300-700-latin.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:300 700;src:url(fonts/figtree-normal-300-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+20A0-20C0}
+@font-face{font-family:'Figtree';font-style:italic;font-weight:300 700;src:url(fonts/figtree-italic-300-700-latin.woff2) format('woff2')}
+@font-face{font-family:'Figtree';font-style:italic;font-weight:300 700;src:url(fonts/figtree-italic-300-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+20A0-20C0}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;src:url(fonts/caveat-normal-400-700-latin.woff2) format('woff2')}
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;src:url(fonts/caveat-normal-400-700-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+20A0-20C0}
+
+:root{
+  --navy:#262B5F; --red:#AE3A2F; --gold:#D29A2E; --gold-ink:#9A6B12;
+  --green:#5F7549; --plum:#7A4A6E;
+  --ink:#2F2F35; --muted:#6B6B73; --sand:#C9B793; --rule:#CDBF9F;
+  --wash:#EEEEF3; --wash2:#F6F6F8; --cream:#F6F5F1;
+  --serif:'Fraunces',Georgia,serif; --sans:'Figtree',system-ui,sans-serif; --hand:'Caveat',cursive;
+}
+
+@page{size:A4;margin:50pt 50pt 62pt 58pt}
+@page cover{margin:0}
+
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;font-family:var(--sans);font-weight:350;font-size:9.4pt;line-height:1.62;color:var(--ink);font-variation-settings:normal}
+p{margin:0 0 7pt}
+b,strong{font-weight:650;color:var(--navy)}
+em{font-style:italic}
+
+/* ---------- chapter openers ---------- */
+.chap{break-before:page}
+.chap-head{display:flex;align-items:center;gap:16pt;margin:4pt 0 18pt}
+.seal{width:60pt;height:60pt;flex:none}
+.chap-head .t{flex:1;padding-bottom:9pt;
+  background:linear-gradient(90deg,var(--navy) 55%,transparent 0) bottom left/9pt 1.6pt repeat-x}
+h1{font-family:var(--serif);font-weight:560;font-size:25pt;line-height:1.1;color:var(--navy);margin:0;letter-spacing:-.25pt;
+  font-variation-settings:'opsz' 72,'SOFT' 50}
+
+/* sub-heads: the v1 gold dotted marker now sits above the head, on the left edge */
+h2{font-family:var(--serif);font-weight:620;font-size:13pt;line-height:1.3;color:var(--navy);margin:15pt 0 6pt;break-after:avoid;
+  font-variation-settings:'opsz' 36}
+h2::before{content:"";display:block;width:62pt;height:1.5pt;margin-bottom:6pt;
+  background:linear-gradient(90deg,var(--gold) 50%,transparent 0) left/4pt 1.2pt repeat-x}
+h3{font-family:var(--serif);font-style:italic;font-weight:560;font-size:11.5pt;color:var(--red);margin:12pt 0 5pt;break-after:avoid}
+.keep{break-inside:avoid}
+h2{break-inside:avoid}
+.chap.flow{break-before:auto;margin-top:22pt}
+
+/* ---------- handwritten notes ---------- */
+.note{font-family:var(--hand);font-weight:500;font-size:14.5pt;line-height:1.1;color:var(--red);display:block;transform:rotate(-1.6deg);transform-origin:left;margin:4pt 0 6pt}
+.note.navy{color:var(--navy)} .note.gold{color:var(--gold-ink)}
+.note.right{text-align:right;transform-origin:right}
+.note .arrow{display:inline-block;width:30pt;height:14pt;vertical-align:-2pt;margin-right:4pt}
+
+/* ---------- lists ---------- */
+ul.dia{list-style:none;padding:0;margin:4pt 0 9pt}
+ul.dia li{position:relative;padding-left:15pt;margin-bottom:4pt}
+ul.dia li::before{content:"";position:absolute;left:2pt;top:5.2pt;width:5.4pt;height:5.4pt;background:var(--gold);transform:rotate(45deg)}
+ol.num{list-style:none;counter-reset:n;padding:0;margin:4pt 0 9pt}
+ol.num li{counter-increment:n;position:relative;padding-left:20pt;margin-bottom:3pt}
+ol.num li::before{content:counter(n);position:absolute;left:0;top:-2pt;font-family:var(--serif);font-weight:700;font-size:13pt;color:var(--red)}
+
+/* ---------- stitched tables ---------- */
+table{width:100%;border-collapse:collapse;font-size:8.2pt;line-height:1.45;margin:4pt 0 10pt}
+thead th{background:var(--wash);font-family:var(--serif);font-weight:600;color:var(--navy);text-align:left;padding:6pt 7pt;border-bottom:1.6pt solid var(--navy);font-size:8.6pt}
+tbody td{padding:6pt 7pt;vertical-align:top;border-bottom:.8pt dashed var(--sand)}
+tbody tr:nth-child(even) td{background:var(--wash2)}
+tbody td:first-child{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:8.5pt}
+tbody td .sub{display:block;font-family:var(--sans);font-weight:400;color:var(--muted);font-size:7.6pt}
+tr{break-inside:avoid}
+td.price{font-family:var(--serif);font-weight:600;color:var(--red)!important}
+td.price.n{color:var(--navy)!important}
+
+/* ---------- figures ---------- */
+.fig{break-inside:avoid;margin:12pt 0 12pt}
+.fig .cap{border-top:.8pt solid var(--rule);margin-top:8pt;padding-top:5pt;font-style:italic;font-size:7.8pt;color:var(--muted)}
+
+/* ---------- pull quote with wavy edges ---------- */
+.quote{position:relative;background:var(--navy);color:#fff;font-family:var(--serif);font-style:italic;font-weight:500;font-size:13pt;line-height:1.38;
+  padding:15pt 26pt;margin:16pt 0;break-inside:avoid}
+.quote::before,.quote::after{content:"";position:absolute;left:0;right:0;height:5pt;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='5'%3E%3Cpath d='M0 5 Q4 0 8 5 T16 5 Z' fill='%23262B5F'/%3E%3C/svg%3E") repeat-x;background-size:10pt 5pt}
+.quote::before{top:-4.6pt}
+.quote::after{bottom:-4.6pt;transform:scaleY(-1)}
+.quote.big{font-style:normal;font-weight:600;font-size:15.5pt;padding:22pt 30pt}
+
+/* ---------- hand-drawn boxes (filled by decorate()) ---------- */
+.rough{position:relative}
+.rough>svg.rbg{position:absolute;inset:0;width:100%;height:100%;z-index:0;overflow:visible}
+.rough>*:not(svg.rbg){position:relative;z-index:1}
+
+.small{font-size:7.8pt;color:var(--muted)}
+.sources{font-size:7.4pt;line-height:1.5;color:var(--muted)}
